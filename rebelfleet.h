@@ -3,27 +3,19 @@
 
 #include <memory>
 #include "helper.h"
+#include "starship.h"
 
-class RebelStarship {
+class RebelStarship : public Starship {
 
 protected:
 
-    ShieldPoints shield;
     Speed speed;
 
 public:
 
-    RebelStarship(ShieldPoints shield, Speed speed);
-
-    ShieldPoints getShield() const {
-        return shield;
-    }
-
     Speed getSpeed() const {
         return speed;
     }
-
-    void takeDamage(AttackPower damage);
 };
 
 class Explorer : public RebelStarship {
@@ -33,34 +25,20 @@ public:
     Explorer(ShieldPoints shield, Speed speed);
 };
 
-class StarCruiser : public RebelStarship {
-
-private:
-
-    AttackPower attack;
+class StarCruiser : public RebelStarship, public AttackingEntity {
 
 public:
 
     StarCruiser(ShieldPoints shield, Speed speed, AttackPower attack);
 
-    AttackPower getAttackPower() const {
-        return attack;
-    }
 };
 
-class XWing : public RebelStarship {
-
-private:
-
-    AttackPower attack;
+class XWing : public RebelStarship, public AttackingEntity {
 
 public:
 
     XWing(ShieldPoints shield, Speed speed, AttackPower attack);
 
-    AttackPower getAttackPower() const {
-        return attack;
-    }
 };
 
 std::shared_ptr<Explorer> createExplorer(ShieldPoints shield, Speed speed);

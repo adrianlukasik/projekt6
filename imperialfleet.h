@@ -4,27 +4,13 @@
 #include <memory>
 #include <vector>
 #include "helper.h"
+#include "starship.h"
 
-class ImperialStarship {
-
-protected:
-
-    ShieldPoints shield;
-    AttackPower attack;
+class ImperialStarship : public Starship, public AttackingEntity {
 
 public:
 
     ImperialStarship(ShieldPoints shield, AttackPower attack);
-
-    ShieldPoints getShield() const {
-        return shield;
-    }
-
-    AttackPower getAttackPower() const {
-        return attack;
-    }
-
-    void takeDamage(AttackPower damage);
 };
 
 class DeathStar : public ImperialStarship {
