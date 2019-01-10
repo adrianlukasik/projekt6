@@ -3,7 +3,6 @@
 
 #include <memory>
 #include "helper.h"
-#include "starship.h"
 
 class RebelStarship : public Starship {
 

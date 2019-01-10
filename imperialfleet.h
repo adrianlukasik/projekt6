@@ -4,7 +4,6 @@
 #include <memory>
 #include <vector>
 #include "helper.h"
-#include "starship.h"
 
 class ImperialStarship : public Starship, public AttackingEntity {
 

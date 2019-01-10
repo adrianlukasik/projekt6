@@ -4,7 +4,6 @@
 #include "helper.h"
 #include "imperialfleet.h"
 #include "rebelfleet.h"
-#include "clock.h"
 
 class SpaceBattle {
 
