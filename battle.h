@@ -13,8 +13,8 @@ private:
     Time t0;
     /* czas maksymalny. */
     Time t1;
-    size_t undamaged_imperial_starships;
-    size_t undamaged_rebel_starships;
+    size_t undestroyed_imperial_starships;
+    size_t undestroyed_rebel_starships;
     std::vector<std::shared_ptr<ImperialStarship>> imperial_fleet;
     std::vector<std::shared_ptr<RebelStarship>> rebel_fleet;
 
@@ -23,11 +23,11 @@ public:
     //todo
 
     size_t countImperialFleet() const {
-        return undamaged_imperial_starships;
+        return undestroyed_imperial_starships;
     }
 
     size_t countRebelFleet() const {
-        return undamaged_rebel_starships;
+        return undestroyed_rebel_starships;
     }
 
     void tick(Time timeStep);
