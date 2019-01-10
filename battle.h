@@ -4,15 +4,13 @@
 #include "helper.h"
 #include "imperialfleet.h"
 #include "rebelfleet.h"
+#include "clock.h"
 
 class SpaceBattle {
 
 private:
 
-    /* czas startowy. */
-    Time t0;
-    /* czas maksymalny. */
-    Time t1;
+    Clock clock;
     size_t undestroyed_imperial_starships;
     size_t undestroyed_rebel_starships;
     std::vector<std::shared_ptr<ImperialStarship>> imperial_fleet;
