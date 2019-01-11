@@ -12,9 +12,7 @@ protected:
 
 public:
 
-    Speed getSpeed() const {
-        return speed;
-    }
+    Speed getSpeed() const;
 };
 
 class Explorer : public RebelStarship {
