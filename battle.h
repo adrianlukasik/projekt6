@@ -15,17 +15,15 @@ private:
     std::vector<std::shared_ptr<ImperialStarship>> imperial_fleet;
     std::vector<std::shared_ptr<RebelStarship>> rebel_fleet;
 
+    void battle();
+
 public:
 
     //todo
 
-    size_t countImperialFleet() const {
-        return undestroyed_imperial_starships;
-    }
+    size_t countImperialFleet() const;
 
-    size_t countRebelFleet() const {
-        return undestroyed_rebel_starships;
-    }
+    size_t countRebelFleet() const;
 
     void tick(Time timeStep);
 
