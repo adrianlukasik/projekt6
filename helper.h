@@ -14,12 +14,8 @@ protected:
 
 public:
 
-    Starship(ShieldPoints shield, Speed speed);
-
-    ShieldPoints getShield() const {
-        return shield;
-    }
-
+    Starship(ShieldPoints shield);
+    ShieldPoints getShield() const;
     void takeDamage(AttackPower damage);
 };
 
@@ -31,28 +27,22 @@ protected:
 
 public:
 
-  AttackPower getAttackPower() const {
-      return attack;
-  }
+  AttackPower getAttackPower() const;
 };
 
 class Clock {
 
 private:
   /* czas startowy. */
-  Time t0;
+  Time startTime;
   /* czas maksymalny. */
-  Time t1;
+  Time maxTime;
   /* aktualny czas */
-  Time t;
+  Time now;
 
 public:
 
-  Clock();
-
-  void setStartTime(Time t0);
-
-  void setMaximumTime(Time t1);
+  Clock(Time t0, Time t1);
 
   /* Zwraca true, jeśli statki mają się atakować. */
   bool clockTick(Time timeStep);
