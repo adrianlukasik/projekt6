@@ -8,10 +8,10 @@ Explorer::Explorer(ShieldPoints shld, Speed spd)
     : shield(shld), speed(spd) {}
 
 StarCruiser::StarCruiser(ShieldPoints shld, Speed spd, AttackPower atck)
-    : shield(shld), speed(spd), AttackPower(atck) {}
+    : shield(shld), speed(spd), attack(atck) {}
 
 XWing::XWing(ShieldPoints shld, Speed spd, AttackPower atck)
-    : shield(shld), speed(spd), AttackPower(atck) {}
+    : shield(shld), speed(spd), attack(atck) {}
 
 // TODO
 createExplorer(ShieldPoints shield, Speed speed) {
