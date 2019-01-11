@@ -5,12 +5,7 @@
 #include <vector>
 #include "helper.h"
 
-class ImperialStarship : public Starship, public AttackingEntity {
-
-public:
-
-    ImperialStarship(ShieldPoints shield, AttackPower attack);
-};
+class ImperialStarship : public Starship, public AttackingEntity {};
 
 class DeathStar : public ImperialStarship {
 
