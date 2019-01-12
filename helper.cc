@@ -4,11 +4,11 @@
 
 Starship::Starship(ShieldPoints shld) : shield(shld) {}
 
-Starship::getShield() const {
+ShieldPoints Starship::getShield() const {
     return shield;
 }
 
-Starship::takeDamage(AttackPower damage) {
+void Starship::takeDamage(AttackPower damage) {
   if (shield > damage) {
     shield -= damage;
   }
@@ -19,19 +19,18 @@ Starship::takeDamage(AttackPower damage) {
 
 //////////// ATTACKING ENTITY //////////////
 
-AttackingEntity::getAttackPower() const {
+AttackPower AttackingEntity::getAttackPower() const {
     return attack;
 }
 
 ////////////////// CLOCK //////////////////
 
-  Clock::Clock(Time t0, Time t1) : startTime(t0), maxTime(t1) {}
+Clock::Clock(Time t0, Time t1) : startTime(t0), maxTime(t1) {}
 
-  Clock::clockTick(Time timeStep) {
-    // Sprawdz czy jest czas ataku.
-    bool isAttackTime = ((now % 2 == 0 || now % 3 == 0) && !(now % 5 == 0));
-    // Zaktualizuj czas.
-    now = (now + timeStep) % maxTime;
-    return isAttackTime;
-  }
-};
+bool Clock::clockTick(Time timeStep) {
+  // Sprawdz czy jest czas ataku.
+  bool isAttackTime = ((now % 2 == 0 || now % 3 == 0) && !(now % 5 == 0));
+  // Zaktualizuj czas.
+  now = (now + timeStep) % maxTime;
+  return isAttackTime;
+}

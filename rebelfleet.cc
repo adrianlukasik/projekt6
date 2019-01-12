@@ -13,17 +13,17 @@ StarCruiser::StarCruiser(ShieldPoints shld, Speed spd, AttackPower atck)
 XWing::XWing(ShieldPoints shld, Speed spd, AttackPower atck)
     : shield(shld), speed(spd), attack(atck) {}
 
-// TODO
-createExplorer(ShieldPoints shield, Speed speed) {
 
+std::shared_ptr<Explorer> createExplorer(ShieldPoints shield, Speed speed) {
+    return std::make_shared<Explorer>(Explorer(shield, speed));
 }
 
-// TODO
-createStarCruiser(ShieldPoints shield, Speed speed, AttackPower attack) {
-
+std::shared_ptr<StarCruiser> createStarCruiser(ShieldPoints shield,
+                                               Speed speed, AttackPower attack) {
+    return std::make_shared<StarCruiser>(StarCruiser(shield, speed, attack));
 }
 
-// TODO
-createXWing(ShieldPoints shield, Speed speed, AttackPower attack) {
-
+std::shared_ptr<XWing> createXWing(ShieldPoints shield, Speed speed,
+                                   AttackPower attack) {
+    return std::make_shared<XWing>(XWing(shield, speed, attack));
 }
