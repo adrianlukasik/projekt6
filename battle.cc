@@ -53,11 +53,13 @@ SpaceBattle::Builder::Builder() : t0_set(false), t1_set(false),
 
 SpaceBattle::Builder SpaceBattle::Builder::startTime(const Time &time) {
     // ustawienie czasu startowego (t0) w clocku na time
+    this->t0_set = true;
     return *this;
 }
 
 SpaceBattle::Builder SpaceBattle::Builder::maxTime(const Time &time) {
     // ustawienie czasu maksymalnego (t1) w clocku na time
+    this->t1_set = true;
     return *this;
 }
 
