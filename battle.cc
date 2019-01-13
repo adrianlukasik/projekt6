@@ -49,7 +49,8 @@ void SpaceBattle::tick(Time timeStep) {
 // TODO Builder dla SpaceBattle
 
 SpaceBattle::Builder::Builder() : t0_set(false), t1_set(false),
-                                  starships_set(false) {}
+                                  imp_starships_set(false),
+                                  reb_starships_set(false) {}
 
 SpaceBattle::Builder SpaceBattle::Builder::startTime(const Time &time) {
     // ustawienie czasu startowego (t0) w clocku na time
@@ -63,10 +64,24 @@ SpaceBattle::Builder SpaceBattle::Builder::maxTime(const Time &time) {
     return *this;
 }
 
-// todo
 SpaceBattle::Builder SpaceBattle::Builder::ship(
-        const std::shared_ptr <Starship> starship) {
+        const std::shared_ptr <ImperialStarship> &imp_starship) {
+    if (set_imp_fleet.find(imp_starship) == set_imp_fleet.end()) {
+        set_imp_fleet.insert(imp_starship);
+        imperial_fleet.push_back(imp_starship);
+        this->imp_starships_set = true;
+    }
+    return *this;
+}
 
+SpaceBattle::Builder SpaceBattle::Builder::ship(
+        const std::shared_ptr <RebelStarship> &reb_starship) {
+    if (set_reb_fleet.find(reb_starship) == set_reb_fleet.end()) {
+        set_reb_fleet.insert(reb_starship);
+        rebel_fleet.push_back(reb_starship);
+        this->reb_starships_set = true;
+    }
+    return *this;
 }
 
 SpaceBattle SpaceBattle::Builder::build() {
