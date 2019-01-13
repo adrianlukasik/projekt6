@@ -23,6 +23,25 @@ void SpaceBattle::battle() {
     }
 }
 
+SpaceBattle::SpaceBattle(
+        const Clock &clock_,
+        const std::vector<std::shared_ptr<ImperialStarship> &imp_fleet,
+        const std::vector<std::shared_ptr<RebelStarship> &reb_fleet) :
+        clock(clock_), undestroyed_imperial_starships(0),
+        undestroyed_rebel_starships(0), imperial_fleet(imp_fleet),
+        rebel_fleet(reb_fleet) {
+    for (auto &ship : imp_fleet) {
+        if (ship->getShield() > 0) {
+            undestroyed_imperial_starships++;
+        }
+    }
+    for (auto &ship : reb_fleet) {
+        if (ship->getShield() > 0) {
+            undestroyed_rebel_starships++;
+        }
+    }
+}
+
 size_t SpaceBattle::countImperialFleet() const {
     return undestroyed_imperial_starships;
 }
