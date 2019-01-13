@@ -3,7 +3,7 @@
 #include <iostream>
 
 void SpaceBattle::battle() {
-    for (auto imperialShip = imperial_fleet->begin(); imperialShip != imperial_fleet->end();) {
+    /*for (auto imperialShip = imperial_fleet->begin(); imperialShip != imperial_fleet->end();) {
         for (auto rebelShip = rebel_fleet->begin(); rebelShip != rebel_fleet->end();) {
 
             if (imperialShip->getShield() > 0 && rebelShip->getShield() > 0) {
@@ -22,7 +22,7 @@ void SpaceBattle::battle() {
         } else {
             imperialShip = imperial_fleet->erase(imperialShip);
         }
-    }
+    }*/
 }
 
 SpaceBattle::SpaceBattle(
@@ -62,14 +62,14 @@ void SpaceBattle::tick(Time timeStep) {
     else if (countRebelFleet() == 0) {
         std::cout << "IMPERIUM WON\n";
     }
-    else if (clock.tickClock(timeStep)) {
+    else if (clock.clockTick(timeStep)) {
         battle();
     }
 }
 
 SpaceBattle::Builder::Builder() : t0_set(false), t1_set(false),
                                   imp_starships_set(false),
-                                  reb_starships_set(false) {}
+                                  reb_starships_set(false),  {}
 
 SpaceBattle::Builder SpaceBattle::Builder::startTime(const Time &time) {
     this->clock.setStartTime(time);

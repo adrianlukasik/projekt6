@@ -14,17 +14,17 @@ Speed RebelStarship::getSpeed() const {
 
 Explorer::Explorer(ShieldPoints shld, Speed spd)
     : shield(shld), speed(spd) {
-        assert(MIN_EXPLORER_SPEED <= spd && spd <= MAX_EXPLORER_SPEED)
+        assert(MIN_EXPLORER_SPEED <= spd && spd <= MAX_EXPLORER_SPEED);
     }
 
 StarCruiser::StarCruiser(ShieldPoints shld, Speed spd, AttackPower atck)
     : shield(shld), speed(spd), attack(atck) {
-        assert(MIN_STARCRUISER_SPEED <= spd && spd <= MAX_STARCRUISER_SPEED)
+        assert(MIN_STARCRUISER_SPEED <= spd && spd <= MAX_STARCRUISER_SPEED);
     }
 
 XWing::XWing(ShieldPoints shld, Speed spd, AttackPower atck)
     : shield(shld), speed(spd), attack(atck) {
-        assert(MIN_XWING_SPEED <= spd && spd <= MAX_XWING_SPEED)
+        assert(MIN_XWING_SPEED <= spd && spd <= MAX_XWING_SPEED);
     }
 
 
