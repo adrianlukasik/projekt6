@@ -21,9 +21,11 @@ private:
 public:
 
     // konstruktor SpaceBattle
-    SpaceBattle(const Clock &clock,
-                const std::vector<std::shared_ptr<ImperialStarship> &imp_fleet,
+    SpaceBattle(const Clock &clock_,
+                const std::vector<std::shared_ptr<ImperialStarship>> &imp_fleet,
                 const std::vector<std::shared_ptr<RebelStarship>> &reb_fleet);
+
+
 
     size_t countImperialFleet() const;
 
