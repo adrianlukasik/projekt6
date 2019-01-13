@@ -63,15 +63,6 @@ AttackPower Squadron::getAttackPower() const {
 
 
 void Squadron::takeDamage(AttackPower damage) {
-    /*for (auto &ship = squadron.begin(); ship != squadron.end();) {
-    (*ship)->takeDamage(damage);
-    if ((*ship)->getShield() > 0) {
-      ship++;
-    }
-    else {
-      ship = ships.erase(ship);
-    }
-  }*/
     for (auto &ship : squadron) {
         ship->takeDamage(damage);
     }
