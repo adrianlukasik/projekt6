@@ -3,3 +3,5 @@
 z wektora? ja bym preferował żeby zniszczone statki były nadal w wektorze.
 Wtedy tylko wystarczyłoby w funkcji AttackPower Squadron::getAttackPower() dodać
 warunek, że statek ma tarcze > 0.
+
+Możemy zrobić tak, żeby nie zdejmował z wektora.

@@ -1,11 +1,11 @@
 #include "battle.h"
 
-SpaceBattle::battle() {
+void SpaceBattle::battle() {
     for (auto imperialShip = imperial_fleet->begin(); imperialShip != imperial_fleet->end();) {
       for (auto rebelShip = rebel_fleet->begin(); rebelShip != rebel_fleet->end();) {
 
         if (imperialShip->getShield() > 0 && rebelShip->getShield() > 0) {
-            // TODO atak
+            attack(imperialShip, rebelShip);
         }
 
         if (rebelShip->getShield() > 0) {
@@ -23,15 +23,15 @@ SpaceBattle::battle() {
     }
 }
 
-SpaceBattle::countImperialFleet() const {
+size_t SpaceBattle::countImperialFleet() const {
     return undestroyed_imperial_starships;
 }
 
-SpaceBattle::countRebelFleet() const {
+size_t SpaceBattle::countRebelFleet() const {
     return undestroyed_rebel_starships;
 }
 
-SpaceBattle::tick(Time timeStep) {
+void SpaceBattle::tick(Time timeStep) {
     if (countImperialFleet() == 0 && countRebelFleet() == 0) {
         std::cout << "DRAW\n";
     }

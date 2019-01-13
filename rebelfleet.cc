@@ -1,6 +1,6 @@
 #include "rebelfleet.h"
 
-RebelStarship::getSpeed() const {
+Speed RebelStarship::getSpeed() const {
     return speed;
 }
 
