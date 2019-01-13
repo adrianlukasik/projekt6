@@ -17,7 +17,7 @@ public:
     Starship(ShieldPoints shield);
     ShieldPoints getShield() const;
     void takeDamage(AttackPower damage);
-    virtual bool isAttacking() const;
+    bool isAttacking() const;
 };
 
 class AttackingEntity {
@@ -29,7 +29,7 @@ protected:
 public:
 
   AttackPower getAttackPower() const;
-  bool isAttacking() const override;
+  bool isAttacking() const;
 };
 
 class Clock {
