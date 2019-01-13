@@ -46,8 +46,6 @@ void SpaceBattle::tick(Time timeStep) {
     }
 }
 
-// TODO Builder dla SpaceBattle
-
 SpaceBattle::Builder::Builder() : t0_set(false), t1_set(false),
                                   imp_starships_set(false),
                                   reb_starships_set(false) {}
@@ -86,6 +84,6 @@ SpaceBattle::Builder SpaceBattle::Builder::ship(
 
 SpaceBattle SpaceBattle::Builder::build() {
     assert(t0_set && t1_set && starships_set);
-    // todo konstruktor spacebattle
-    // return SpaceBattle()
+    return SpaceBattle(Clock(clock.getStartTime(), clock.getMaxTime()),
+                       imperial_fleet, rebel_fleet);
 }

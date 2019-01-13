@@ -44,6 +44,14 @@ public:
 
   Clock(Time t0, Time t1);
 
+  Time getStartTime() {
+    return startTime;
+  }
+
+  Time getMaxTime() {
+    return maxTime;
+  }
+
   void setStartTime(Time t) {
     startTime = t;
   }
