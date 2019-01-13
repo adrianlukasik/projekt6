@@ -44,6 +44,14 @@ public:
 
   Clock(Time t0, Time t1);
 
+  void setStartTime(Time t) {
+    startTime = t;
+  }
+
+  void setMaxTime(Time t) {
+    maxTime = t;
+  }
+
   /* Zwraca true, jeśli statki mają się atakować. */
   bool clockTick(Time timeStep);
 };
