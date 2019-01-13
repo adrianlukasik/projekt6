@@ -52,7 +52,6 @@ ShieldPoints Squadron::getShield() const {
     return totalShield;
 }
 
-// do zweryfikowania
 AttackPower Squadron::getAttackPower() const {
     AttackPower totalAttack = 0;
     for (auto &ship : squadron) {
@@ -62,9 +61,9 @@ AttackPower Squadron::getAttackPower() const {
     return totalAttack;
 }
 
-// do zweryfikowania
+
 void Squadron::takeDamage(AttackPower damage) {
-    for (auto &ship = squadron.begin(); ship != squadron.end();) {
+    /*for (auto &ship = squadron.begin(); ship != squadron.end();) {
     (*ship)->takeDamage(damage);
     if ((*ship)->getShield() > 0) {
       ship++;
@@ -72,7 +71,10 @@ void Squadron::takeDamage(AttackPower damage) {
     else {
       ship = ships.erase(ship);
     }
-  }
+  }*/
+    for (auto &ship : squadron) {
+        ship->takeDamage(damage);
+    }
 }
 
 

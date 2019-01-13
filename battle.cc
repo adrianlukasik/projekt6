@@ -2,24 +2,24 @@
 
 void SpaceBattle::battle() {
     for (auto imperialShip = imperial_fleet->begin(); imperialShip != imperial_fleet->end();) {
-      for (auto rebelShip = rebel_fleet->begin(); rebelShip != rebel_fleet->end();) {
+        for (auto rebelShip = rebel_fleet->begin(); rebelShip != rebel_fleet->end();) {
 
-        if (imperialShip->getShield() > 0 && rebelShip->getShield() > 0) {
-            attack(imperialShip, rebelShip);
+            if (imperialShip->getShield() > 0 && rebelShip->getShield() > 0) {
+                attack(imperialShip, rebelShip);
+            }
+
+            if (rebelShip->getShield() > 0) {
+                rebelShip++;
+            } else {
+                rebelShip = rebel_fleet->erase(rebelShip);
+            }
         }
 
-        if (rebelShip->getShield() > 0) {
-          rebelShip++;
+        if (imperialShip->getShield() > 0) {
+            imperialShip++;
         } else {
-          rebelShip = rebel_fleet->erase(rebelShip);
+            imperialShip = imperial_fleet->erase(imperialShip);
         }
-      }
-
-      if (imperialShip->getShield() > 0) {
-        imperialShip++;
-      } else {
-        imperialShip = imperial_fleet->erase(imperialShip);
-      }
     }
 }
 
@@ -111,7 +111,7 @@ void attack(ImperialStarship *imp, RebelStarship *reb) {
     AttackPower impPower = imp->getAttackPower();
     reb->takeDamage(impPower);
     if (reb->isAttacking()) {
-      AttackPower rebPower = reb->getAttackPower();
-      imp->takeDamage(rebPower);
+        AttackPower rebPower = reb->getAttackPower();
+        imp->takeDamage(rebPower);
     }
 }

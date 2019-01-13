@@ -24,46 +24,46 @@ class AttackingEntity {
 
 protected:
 
-  AttackPower attack;
+    AttackPower attack;
 
 public:
 
-  AttackPower getAttackPower() const;
-  bool isAttacking() const;
+    AttackPower getAttackPower() const;
+    bool isAttacking() const;
 };
 
 class Clock {
 
 private:
-  /* czas startowy. */
-  Time startTime;
-  /* czas maksymalny. */
-  Time maxTime;
-  /* aktualny czas */
-  Time now;
+    /* czas startowy. */
+    Time startTime;
+    /* czas maksymalny. */
+    Time maxTime;
+    /* aktualny czas */
+    Time now;
 
 public:
 
-  Clock(Time t0, Time t1);
+    Clock(Time t0, Time t1);
 
-  Time getStartTime() {
-    return startTime;
-  }
+    Time getStartTime() {
+      return startTime;
+    }
 
-  Time getMaxTime() {
-    return maxTime;
-  }
+    Time getMaxTime() {
+      return maxTime;
+    }
 
-  void setStartTime(Time t) {
-    startTime = t;
-  }
+    void setStartTime(Time t) {
+      startTime = t;
+    }
 
-  void setMaxTime(Time t) {
-    maxTime = t;
-  }
+    void setMaxTime(Time t) {
+      maxTime = t;
+    }
 
-  /* Zwraca true, jeśli statki mają się atakować. */
-  bool clockTick(Time timeStep);
+    /* Zwraca true, jeśli statki mają się atakować. */
+    bool clockTick(Time timeStep);
 };
 
 #endif //STARWARS2_HELPER_H
