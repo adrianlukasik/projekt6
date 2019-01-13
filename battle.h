@@ -61,18 +61,6 @@ public:
     };
 };
 
-// Zostanie wywołane, jeśli statek rebeliancki może atakować.
-void attack(ImperialStarship *imp, AttackingEntity *reb) {
-    AttackPower impPower = imp->getAttackPower();
-    AttackPower rebPower = reb->getAttackPower();
-    reb->takeDamage(impPower);
-    imp->takeDamage(rebPower);
-}
-
-// Wywołane, gdy statek rebelii nie może atakować.
-void attack(ImperialStarship *imp, RebelStarship *reb) {
-    AttackPower impPower = imp->getAttackPower();
-    reb->takeDamage(impPower);
-}
+void attack(ImperialStarship *imp, RebelStarship *reb);
 
 #endif //STARWARS2_BATTLE_H

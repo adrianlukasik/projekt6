@@ -17,10 +17,18 @@ void Starship::takeDamage(AttackPower damage) {
   }
 }
 
+bool AttackingEntity::isAttacking() const {
+  return false;
+}
+
 //////////// ATTACKING ENTITY //////////////
 
 AttackPower AttackingEntity::getAttackPower() const {
     return attack;
+}
+
+bool AttackingEntity::isAttacking() const {
+  return true;
 }
 
 ////////////////// CLOCK //////////////////

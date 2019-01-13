@@ -87,3 +87,12 @@ SpaceBattle SpaceBattle::Builder::build() {
     return SpaceBattle(Clock(clock.getStartTime(), clock.getMaxTime()),
                        imperial_fleet, rebel_fleet);
 }
+
+void attack(ImperialStarship *imp, RebelStarship *reb) {
+    AttackPower impPower = imp->getAttackPower();
+    reb->takeDamage(impPower);
+    if (reb->isAttacking()) {
+      AttackPower rebPower = reb->getAttackPower();
+      imp->takeDamage(rebPower);
+    }
+}
