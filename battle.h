@@ -19,7 +19,7 @@ private:
 
 public:
 
-    //todo
+    // konstruktor SpaceBattle
 
     size_t countImperialFleet() const;
 
@@ -31,7 +31,10 @@ public:
 
     private:
 
-        //todo
+        Clock clock;
+        std::vector<std::shared_ptr<ImperialStarship>> imperial_fleet;
+        std::vector<std::shared_ptr<RebelStarship>> rebel_fleet;
+        bool t0_set, t1_set, starships_set;
 
     public:
 
@@ -39,12 +42,11 @@ public:
 
         SpaceBattle build();
 
-        Builder &startTime(const Time &time);
+        Builder startTime(const Time &time);
 
-        Builder &maxTime(const Time &time);
+        Builder maxTime(const Time &time);
 
-        //todo kilka wersji ship
-        Builder &ship(const std::shared_ptr<ImperialStarship> &imperial_fleet);
+        Builder ship(const std::shared_ptr<Starship> starship);
     };
 };
 

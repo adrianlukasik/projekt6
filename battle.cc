@@ -47,3 +47,28 @@ void SpaceBattle::tick(Time timeStep) {
 }
 
 // TODO Builder dla SpaceBattle
+
+SpaceBattle::Builder::Builder() : t0_set(false), t1_set(false),
+                                  starships_set(false) {}
+
+SpaceBattle::Builder SpaceBattle::Builder::startTime(const Time &time) {
+    // ustawienie czasu startowego (t0) w clocku na time
+    return *this;
+}
+
+SpaceBattle::Builder SpaceBattle::Builder::maxTime(const Time &time) {
+    // ustawienie czasu maksymalnego (t1) w clocku na time
+    return *this;
+}
+
+// todo
+SpaceBattle::Builder SpaceBattle::Builder::ship(
+        const std::shared_ptr <Starship> starship) {
+
+}
+
+SpaceBattle SpaceBattle::Builder::build() {
+    assert(t0_set && t1_set && starships_set);
+    // todo konstruktor spacebattle
+    // return SpaceBattle()
+}
