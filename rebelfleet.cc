@@ -1,4 +1,5 @@
 #include "rebelfleet.h"
+#include "assert.h"
 
 #define MIN_STARCRUISER_SPEED 99999
 #define MAX_STARCRUISER_SPEED 299795
